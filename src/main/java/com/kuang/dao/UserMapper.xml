@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuang.dao.UserMapper">
+
+    <select id="loginUser" resultType="User">
+        select * from user where username = #{username} and password = #{password}
+    </select>
+<!--    <insert id="registerUser" parameterType="map">-->
+<!--        INSERT INTO user (username, password, email) VALUES (#{username}, #{password})-->
+<!--    </insert>-->
+    <insert id="insert" parameterType="map">
+        INSERT INTO user (username, password) VALUES (#{username}, #{password})
+    </insert>
+</mapper>
